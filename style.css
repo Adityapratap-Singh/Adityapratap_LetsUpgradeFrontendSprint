@@ -1,0 +1,368 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0a0a0a;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png'); /* Subtle dark texture */
+  background-repeat: repeat;
+  color: #f1f1f1;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+  position: relative; /* For pseudo-element positioning */
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(255,69,0,0.2) 0%, transparent 30%),
+              radial-gradient(circle at 90% 80%, rgba(255,69,0,0.2) 0%, transparent 30%);
+  animation: subtleGlow 15s infinite alternate;
+  pointer-events: none; /* Allow interaction with elements below */
+  z-index: -1; /* Place behind content */
+}
+
+@keyframes subtleGlow {
+  0% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4500;
+  border-radius: 6px;
+  border: 3px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e03e00;
+}
+
+a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ff4500;
+  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+}
+
+.nav-logo {
+  font-family: 'Metal Mania', cursive;
+  color: #ff4500;
+  font-size: 2.5rem;
+  text-decoration: none;
+  text-shadow: 0 0 10px #ff4500;
+}
+
+.nav-links a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1.2rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff4500;
+  text-shadow: 0 0 5px #ff4500;
+}
+
+header {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1541167760496-162885647764?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,69,0,0.3) 0%, rgba(0,0,0,0.8) 70%);
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+header h1 {
+  font-family: 'Metal Mania', cursive;
+  font-size: 7rem;
+  color: #ff4500;
+  text-shadow: 0 0 20px #ff4500, 0 0 30px #ff0000;
+  animation: flicker 1.5s infinite alternate;
+  z-index: 1;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #ff4500,
+      0 0 19px #ff4500,
+      0 0 40px #ff0000,
+      0 0 80px #ff0000,
+      0 0 90px #ff0000,
+      0 0 100px #ff0000,
+      0 0 150px #ff0000;
+  }
+  20%, 24%, 55% {        
+    text-shadow: none;
+  }
+}
+
+header p {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  text-shadow: 2px 2px 8px #000;
+  z-index: 1;
+}
+
+header a {
+  margin-top: 30px;
+  display: inline-block;
+  background: #ff4500;
+  color: #fff;
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 0;
+  font-weight: bold;
+  border: 2px solid #ff4500;
+  box-shadow: 0 0 15px #ff4500;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  border-bottom: 1px solid #333;
+}
+
+h2 {
+  font-family: 'Metal Mania', cursive;
+  color: #ff4500;
+  margin-bottom: 40px;
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 0 0 10px #ff4500;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #ff4500;
+  margin: 10px auto 0;
+}
+
+.menu-item {
+  background-color: #111;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  border-left: 5px solid #ff4500;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative; /* Needed for pseudo-element positioning */
+  overflow: hidden; /* Hide parts of the chili that go outside */
+}
+
+.menu-item::after {
+  content: '';
+  position: absolute;
+  bottom: 5px; /* Position it slightly inside the card */
+  right: 5px; /* Position it slightly inside the card */
+  width: 80px; /* Smaller width */
+  height: 60px; /* Smaller height for oval shape */
+  background-image: url('images/chilly.jpg'); /* Evil smiling chili image */
+  background-size: cover; /* Use cover to fill the oval shape */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  border-radius: 50%; /* Makes it oval if width and height are different */
+  opacity: 0;
+  transform: scale(0.1) rotate(0deg); /* Start very small */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1;
+}
+
+.menu-item:hover::after {
+  opacity: 1;
+  transform: scale(1) rotate(15deg); /* Grow to full size and rotate on hover */
+}
+
+.menu-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 0 10px #ff4500;
+  background-color: #1a1a1a;
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.gallery-images img {
+  width: 100%;
+  height: 200px; /* Fixed height for consistent grid */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  object-position: center; /* Centers the image within its frame */
+  border: 3px solid #ff4500;
+  transition: transform 0.4s ease, box-shadow 0.4s;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 25px #ff4500;
+}
+
+.testimonial-card {
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+  font-style: italic;
+  color: #ddd;
+  background: #111;
+  border: 1px solid #333;
+  border-top: 5px solid #ff4500;
+}
+
+.testimonial-card span {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff4500;
+}
+
+.testimonial-card span {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff4500;
+}
+
+.hours, .contact {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.contact a {
+  color: #ff4500;
+}
+
+.highlight-section {
+  background: #111;
+  border: 2px dashed #ff4500;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+  border-top: 2px solid #ff4500;
+}
+
+footer a {
+  color: #ff4500;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #ff4500;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 3.5rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .nav-links a {
+    font-size: 1rem;
+  }
+  .menu-item {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  color: white;
+  font-size: 22px;
+  padding: 12px 14px;
+  border-radius: 50%;
+  z-index: 999;
+  text-decoration: none;
+  box-shadow: 0 0 10px #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
