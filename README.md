@@ -45,15 +45,16 @@ Simply open `index.html` in a web browser to view the cafe's website. Navigate t
 ## Screenshots
 
 ### Hero Section
-![Hero Section Screenshot]![alt text](image.png)
-*A glimpse of the fiery welcome.*
+<img width="1920" height="908" alt="image" src="https://github.com/user-attachments/assets/e660fc4d-6ea0-48d5-8c14-04d33cce4f5e" />
+*A glimpse of the fiery welcome.
+
 
 ### Menu Item Hover Effect
-![Menu Item Hover Screenshot]![alt text](image-1.png)
+<img width="1920" height="915" alt="image-1" src="https://github.com/user-attachments/assets/754dd020-033b-4bfc-b3fd-504cfe47b300" />
 *See the evil chili peek out on menu items.*
 
 ### Gallery Section
-![Gallery Section Screenshot]![alt text](image-2.png)
+<img width="1920" height="915" alt="image-2" src="https://github.com/user-attachments/assets/f6c4df39-e9ae-4c89-bef2-386696be05b9" />
 *Explore our dark and delicious offerings.*
 
 ## Credits
